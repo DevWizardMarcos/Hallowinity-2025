@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎃 HALLOWINITY 2025 - Infinity School</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Creepster&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0b0b0b;
+      color: #fff;
+      background-image: 
+        radial-gradient(circle at top, #2a0000 0%, #000 100%),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="spiders" patternUnits="userSpaceOnUse" width="100" height="100"><circle cx="10" cy="10" r="1" fill="%23ff450020"/><circle cx="90" cy="90" r="1" fill="%23ff450020"/></pattern></defs><rect width="100" height="100" fill="url(%23spiders)"/></svg>');
+      min-height: 100vh;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Header do Evento */
+    .event-header {
+      text-align: center;
+      padding: 0;
+      position: relative;
+      margin: 0 0 50px 0;
+      overflow: hidden;
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      box-shadow: 0 10px 50px rgba(0, 0, 0, 0.8);
+    }
+
+    .banner-container {
+      position: relative;
+      width: 100%;
+      height: 350px;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);
+    }
+
+    .logo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      animation: subtleZoom 20s ease-in-out infinite alternate;
+      filter: brightness(0.9) contrast(1.1);
+      transition: all 0.5s ease;
+    }
+
+    .logo:hover {
+      filter: brightness(1) contrast(1.15);
+      animation-play-state: paused;
+    }
+
+    @keyframes subtleZoom {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.05); }
+    }
+
+    .banner-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(11, 11, 11, 0.95) 0%, transparent 100%);
+      padding: 60px 20px 30px;
+      pointer-events: none;
+    }
+
+    .event-title {
+      font-family: 'Creepster', cursive;
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      color: #ff4500;
+      text-shadow: 
+        0 0 20px rgba(255, 69, 0, 0.8),
+        0 0 40px rgba(255, 69, 0, 0.5),
+        3px 3px 8px rgba(0, 0, 0, 0.9);
+      margin: 0;
+      animation: flicker 4s ease-in-out infinite;
+      position: absolute;
+      bottom: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      padding: 0 20px;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    @keyframes flicker {
+      0%, 100% { opacity: 1; text-shadow: 0 0 20px rgba(255, 69, 0, 0.8), 0 0 40px rgba(255, 69, 0, 0.5), 3px 3px 8px rgba(0, 0, 0, 0.9); }
+      25% { opacity: 0.85; text-shadow: 0 0 15px rgba(255, 69, 0, 0.6), 0 0 30px rgba(255, 69, 0, 0.4), 3px 3px 8px rgba(0, 0, 0, 0.9); }
+      50% { opacity: 1; text-shadow: 0 0 25px rgba(255, 69, 0, 0.9), 0 0 50px rgba(255, 69, 0, 0.6), 3px 3px 8px rgba(0, 0, 0, 0.9); }
+      75% { opacity: 0.9; text-shadow: 0 0 18px rgba(255, 69, 0, 0.7), 0 0 35px rgba(255, 69, 0, 0.4), 3px 3px 8px rgba(0, 0, 0, 0.9); }
+    }
+
+    .event-date {
+      font-size: 1.2rem;
+      color: #ff6600;
+      font-weight: 600;
+      margin: 0;
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      padding: 0 20px;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    .event-tagline {
+      font-size: 1.1rem;
+      color: #ddd;
+      font-style: italic;
+      margin-bottom: 30px;
+    }
+
+    /* Container Principal */
+    .main-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Seção de Informações do Evento */
+    .event-info {
+      background: rgba(20, 20, 20, 0.95);
+      border-radius: 20px;
+      padding: 40px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 25px rgba(179, 0, 0, 0.4);
+      border: 2px solid #333;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-bottom: 30px;
+    }
+
+    .info-card {
+      background: rgba(40, 40, 40, 0.9);
+      padding: 25px;
+      border-radius: 15px;
+      border-left: 4px solid #b30000;
+      border-top: 1px solid rgba(255, 69, 0, 0.2);
+      transition: all 0.3s ease;
+      backdrop-filter: blur(5px);
+    }
+
+    .info-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(179, 0, 0, 0.3);
+      border-left-color: #ff4500;
+    }
+
+    .info-card h3 {
+      color: #ff4500;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    .info-card p {
+      color: #ddd;
+      line-height: 1.5;
+    }
+
+    /* Seção da Blusa Promocional */
+    .shirt-promo {
+      background: linear-gradient(135deg, rgba(179, 0, 0, 0.15), rgba(255, 69, 0, 0.08));
+      border-radius: 20px;
+      padding: 35px;
+      margin-bottom: 30px;
+      border: 2px solid rgba(179, 0, 0, 0.3);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+    }
+
+    .shirt-promo::before {
+      content: '✨';
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 1.5rem;
+      animation: sparkle 3s ease-in-out infinite;
+    }
+
+    @keyframes sparkle {
+      0%, 100% { opacity: 0.5; transform: scale(1) rotate(0deg); }
+      50% { opacity: 1; transform: scale(1.1) rotate(180deg); }
+    }
+
+    .promo-badge {
+      background: #ff4500;
+      color: white;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 15px;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .shirt-title {
+      color: #ff4500;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .shirt-description {
+      color: #ddd;
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+
+    /* Showcase de Modelos das Camisas */
+    .shirt-models {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+      padding-top: 30px;
+      border-top: 2px solid rgba(255, 69, 0, 0.3);
+    }
+
+    .shirt-models-title {
+      text-align: center;
+      color: #ff4500;
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .model-card {
+      background: rgba(40, 40, 40, 0.8);
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+      border: 2px solid rgba(255, 69, 0, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .model-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 69, 0, 0.2), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .model-card:hover::before {
+      left: 100%;
+    }
+
+    .model-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      border-color: #ff4500;
+      box-shadow: 0 15px 40px rgba(255, 69, 0, 0.4);
+    }
+
+    .model-image {
+      width: 100%;
+      max-width: 250px;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+      transition: all 0.3s ease;
+    }
+
+    .model-card:hover .model-image {
+      transform: scale(1.05);
+      box-shadow: 0 8px 30px rgba(255, 69, 0, 0.6);
+    }
+
+    .model-label {
+      color: #ff6600;
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .price-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    .old-price {
+      color: #888;
+      text-decoration: line-through;
+      font-size: 1.1rem;
+    }
+
+    .new-price {
+      color: #ff4500;
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    .discount {
+      background: #e60000;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .urgency-text {
+      color: #ff6600;
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    /* Formulário */
+    .form-container {
+      background: rgba(20, 20, 20, 0.95);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 0 25px rgba(179, 0, 0, 0.4);
+      border: 2px solid #333;
+    }
+
+    .form-title {
+      color: #ff4500;
+      font-size: 1.8rem;
+      text-align: center;
+      margin-bottom: 30px;
+      font-weight: 600;
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    label {
+      display: block;
+      color: #ff6600;
+      margin-bottom: 8px;
+      font-weight: 500;
+      font-size: 1rem;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border: 2px solid #444;
+      border-radius: 10px;
+      background-color: rgba(40, 40, 40, 0.9);
+      color: #fff;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #ff4500;
+      box-shadow: 0 0 10px rgba(255, 69, 0, 0.3);
+      transform: scale(1.02);
+    }
+
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .checkbox-group input[type="checkbox"] {
+      width: auto;
+      transform: scale(1.2);
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 20px;
+      background: linear-gradient(45deg, #b30000, #e60000, #ff4500);
+      background-size: 200% 200%;
+      border: none;
+      border-radius: 15px;
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 25px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 8px 20px rgba(179, 0, 0, 0.4);
+      animation: gradientShift 3s ease infinite;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(230, 0, 0, 0.6);
+      animation-duration: 1s;
+    }
+
+    .submit-btn:active {
+      transform: translateY(0);
+    }
+
+    /* Contador Regressivo */
+    .countdown-container {
+      background: rgba(20, 20, 20, 0.95);
+      border-radius: 20px;
+      padding: 40px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 25px rgba(179, 0, 0, 0.4);
+      border: 2px solid #333;
+      text-align: center;
+    }
+
+    .countdown-title {
+      color: #ff4500;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      font-family: 'Creepster', cursive;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    }
+
+    .countdown-display {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 25px;
+      flex-wrap: wrap;
+    }
+
+    .countdown-item {
+      background: rgba(179, 0, 0, 0.2);
+      border: 2px solid #ff4500;
+      border-radius: 15px;
+      padding: 20px;
+      min-width: 100px;
+      transition: all 0.3s ease;
+    }
+
+    .countdown-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255, 69, 0, 0.4);
+    }
+
+    .countdown-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #ff4500;
+      display: block;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .countdown-label {
+      font-size: 0.9rem;
+      color: #ddd;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .event-address {
+      background: 
+        linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.7) 100%),
+        url('banner2.webp') center/cover no-repeat;
+      padding: 25px;
+      border-radius: 12px;
+      border: 2px solid rgba(139, 0, 0, 0.6);
+      border-left: 4px solid #8b0000;
+      margin-top: 20px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 
+        inset 0 2px 10px rgba(139, 0, 0, 0.3),
+        0 5px 20px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(2px);
+    }
+
+    .event-address::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(139, 0, 0, 0.8) 20%, 
+        rgba(220, 20, 60, 0.8) 50%, 
+        rgba(139, 0, 0, 0.8) 80%, 
+        transparent 100%);
+      animation: bloodDrip 3s ease-in-out infinite;
+    }
+
+    @keyframes bloodDrip {
+      0%, 100% { opacity: 0.6; transform: translateY(0); }
+      50% { opacity: 1; transform: translateY(2px); }
+    }
+
+    .event-address h4 {
+      color: #ff4500;
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+      text-shadow: 0 0 10px rgba(255, 69, 0, 0.5);
+      position: relative;
+    }
+
+    .event-address p {
+      color: #e0e0e0;
+      line-height: 1.9;
+      font-size: 1rem;
+      position: relative;
+      z-index: 2;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    }
+
+    /* Radio buttons para tamanho da camisa */
+    .radio-group {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .radio-option {
+      position: relative;
+    }
+
+    .radio-option input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .radio-label {
+      display: inline-block;
+      padding: 12px 24px;
+      background: rgba(40, 40, 40, 0.9);
+      border: 2px solid #444;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      color: #ddd;
+    }
+
+    .radio-option input[type="radio"]:checked + .radio-label {
+      background: #ff4500;
+      border-color: #ff4500;
+      color: #fff;
+      transform: scale(1.05);
+    }
+
+    .radio-label:hover {
+      border-color: #ff4500;
+      transform: translateY(-2px);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 30px;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .banner-container {
+        height: 280px;
+      }
+
+      .event-title {
+        font-size: 2rem;
+        bottom: 60px;
+      }
+
+      .event-date {
+        font-size: 1rem;
+        bottom: 30px;
+      }
+
+      .banner-overlay {
+        padding: 40px 15px 20px;
+      }
+
+      .shirt-models {
+        grid-template-columns: 1fr;
+      }
+
+      .model-image {
+        max-width: 200px;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+      
+      .event-info, .form-container, .shirt-promo {
+        padding: 25px;
+      }
+      
+      .price-container {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header do Evento -->
+  <div class="event-header">
+    <div class="banner-container">
+      <img src="banner.png" alt="Hallowinity 2025" class="logo" />
+ 
+    </div>
+  </div>
+
+  <div class="main-container">
+    <!-- Contador Regressivo Halloween -->
+    <div class="countdown-container">
+      <h2 class="countdown-title">⏰ Contagem Regressiva para o Hallowinity ⏰</h2>
+      <div class="countdown-display">
+        <div class="countdown-item">
+          <span class="countdown-number" id="days">00</span>
+          <span class="countdown-label">Dias</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="hours">00</span>
+          <span class="countdown-label">Horas</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="minutes">00</span>
+          <span class="countdown-label">Minutos</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="seconds">00</span>
+          <span class="countdown-label">Segundos</span>
+        </div>
+      </div>
+      
+      <div class="event-address">
+        <h4>📍 Local do Evento</h4>
+        <p>
+          <strong style="color: #ff6600;">Infinity School Savassi</strong><br>
+          Av. do Contorno, 6480<br>
+          Savassi, Belo Horizonte - MG<br>
+          CEP: 31210-190<br>
+          🗓️ Data: 25 de Outubro de 2025<br>
+          🕔 Horário: 17:00<br>
+          <span style="color: #ff4500; font-weight: 600;">⚠️ Traga coragem e seu melhor disfarce! 🎭</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Informações do Evento -->
+  
+        
+  
+        
+      
+
+    </div>
+
+    <!-- Seção Premium da Blusa -->
+    <div class="shirt-promo">
+      <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 20px;">
+        <div style="width: 60px; height: 2px; background: linear-gradient(90deg, transparent, #ff4500, transparent);"></div>
+        <h2 class="shirt-title">👕 Blusa Oficial Hallowinity 2025</h2>
+        <div style="width: 60px; height: 2px; background: linear-gradient(90deg, transparent, #ff4500, transparent);"></div>
+      </div>
+      <p class="shirt-description">
+        Edição limitada e exclusiva para os participantes do evento.<br>
+        <strong>Design premium com estampa única e numeração especial.</strong><br>
+        <em style="color: #ff6600; font-size: 0.9rem;">Disponível apenas durante o evento - Quantidades limitadas</em>
+      </p>
+
+      <!-- Showcase de Modelos -->
+      <div class="shirt-models-title">🎨 Alguns dos Nossos Modelos 🎨</div>
+      <div class="shirt-models">
+        <div class="model-card">
+          <img src="blusa1.png" alt="Modelo 1 - Camisa Hallowinity" class="model-image">
+          <p class="model-label">🎃 Modelo Clássico</p>
+        </div>
+        <!-- <div class="model-card">
+          <img src="blusa2.png" alt="Modelo 2 - Camisa Hallowinity" class="model-image">
+          <p class="model-label">👻 Modelo Premium</p>
+        </div> -->
+      </div>
+    </div>
+
+    <!-- Formulário de Inscrição -->
+    <div class="form-container">
+      <form id="hallowinityForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nome">👤 Nome Completo *</label>
+            <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo">
+          </div>
+          
+          <div class="form-group">
+            <label for="telefone">📱 WhatsApp *</label>
+            <input type="tel" id="telefone" name="telefone" required placeholder="(11) 99999-9999">
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="acompanhantes">👥 Quantos acompanhantes você trará?</label>
+          <select id="acompanhantes" name="acompanhantes">
+            <option value="0">Vou sozinho(a)</option>
+            <option value="1">1 acompanhante</option>
+            <option value="2">2 acompanhantes</option>
+            <option value="3">3 acompanhantes</option>
+            <option value="4">4+ acompanhantes</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label>👕 Você quer a camisa oficial do evento?</label>
+          <div class="checkbox-group">
+            <input type="checkbox" id="querCamisa" name="querCamisa">
+            <label for="querCamisa" style="margin-bottom: 0;">Sim, quero a camisa exclusiva!</label>
+          </div>
+        </div>
+
+        <div class="form-group hidden" id="camisaDetails">
+          <div class="form-row">
+            <div class="form-group">
+              <label>📏 Qual tamanho?</label>
+              <div class="radio-group">
+                <div class="radio-option">
+                  <input type="radio" id="tamanhoP" name="tamanho" value="P">
+                  <label for="tamanhoP" class="radio-label">P</label>
+                </div>
+                <div class="radio-option">
+                  <input type="radio" id="tamanhoM" name="tamanho" value="M">
+                  <label for="tamanhoM" class="radio-label">M</label>
+                </div>
+                <div class="radio-option">
+                  <input type="radio" id="tamanhoG" name="tamanho" value="G">
+                  <label for="tamanhoG" class="radio-label">G</label>
+                </div>
+                <div class="radio-option">
+                  <input type="radio" id="tamanhoGG" name="tamanho" value="GG">
+                  <label for="tamanhoGG" class="radio-label">GG</label>
+                </div>
+                <div class="radio-option">
+                  <input type="radio" id="tamanhoOutro" name="tamanho" value="Outro">
+                  <label for="tamanhoOutro" class="radio-label">Outro</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="quantidadeCamisas">🔢 Quantas camisas você quer?</label>
+              <select id="quantidadeCamisas" name="quantidadeCamisas">
+                <option value="1">1 camisa</option>
+                <option value="2">2 camisas</option>
+                <option value="3">3 camisas</option>
+                <option value="4">4 camisas</option>
+                <option value="5">5+ camisas</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        
+        <button type="submit" class="submit-btn">
+          🎃 Garantir Minha Vaga no Hallowinity 2025
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>© 2025 Infinity School - Hallowinity Event | Todos os direitos reservados</p>
+    <p>"Prepare-se para uma noite onde código e magia se encontram!" 🌙✨</p>
+  </div>
+
+  <script>
+    // Contador Regressivo
+    function updateCountdown() {
+      // Data do evento: 25 de outubro de 2025 às 17:00
+      const eventDate = new Date('2025-10-25T17:00:00').getTime();
+      const now = new Date().getTime();
+      const distance = eventDate - now;
+
+      if (distance < 0) {
+        document.querySelector('.countdown-display').innerHTML = '<p style="color: #ff4500; font-size: 1.5rem;">🎃 O EVENTO COMEÇOU! 🎃</p>';
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById('days').textContent = String(days).padStart(2, '0');
+      document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+      document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+    }
+
+    // Atualizar contador a cada segundo
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // Mostrar/ocultar opções de tamanho da camisa
+    document.getElementById('querCamisa').addEventListener('change', function() {
+      const camisaDetails = document.getElementById('camisaDetails');
+      if (this.checked) {
+        camisaDetails.classList.remove('hidden');
+      } else {
+        camisaDetails.classList.add('hidden');
+        // Desmarcar todas as opções de tamanho
+        document.querySelectorAll('input[name="tamanho"]').forEach(radio => {
+          radio.checked = false;
+        });
+        // Resetar quantidade
+        document.getElementById('quantidadeCamisas').value = '1';
+      }
+    });
+
+    // Submissão do formulário
+    document.getElementById('hallowinityForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Coletando dados do formulário
+      const formData = {
+        nome: document.getElementById('nome').value,
+        telefone: document.getElementById('telefone').value,
+        acompanhantes: document.getElementById('acompanhantes').value,
+        querCamisa: document.getElementById('querCamisa').checked
+      };
+
+      // Se quer camisa, coletar o tamanho e quantidade
+      if (formData.querCamisa) {
+        const tamanhoSelecionado = document.querySelector('input[name="tamanho"]:checked');
+        if (!tamanhoSelecionado) {
+          alert('Por favor, selecione o tamanho da camisa!');
+          return;
+        }
+        formData.tamanho = tamanhoSelecionado.value;
+        formData.quantidadeCamisas = document.getElementById('quantidadeCamisas').value;
+      }
+      
+      // Construindo mensagem para WhatsApp
+      let mensagem = `🎃 *CONFIRMAÇÃO HALLOWINITY 2025* 🎃\n\n`;
+      mensagem += `👤 *Nome:* ${formData.nome}\n`;
+      mensagem += `📱 *WhatsApp:* ${formData.telefone}\n`;
+      mensagem += `👥 *Acompanhantes:* ${formData.acompanhantes}\n`;
+      
+      if (formData.querCamisa) {
+        mensagem += `👕 *Camisa:* Sim\n`;
+        mensagem += `📏 *Tamanho:* ${formData.tamanho}\n`;
+        mensagem += `🔢 *Quantidade:* ${formData.quantidadeCamisas}\n`;
+      } else {
+        mensagem += `👕 *Camisa:* Não\n`;
+      }
+      
+      mensagem += `\n🎃 Confirmo minha presença no Hallowinity 2025!`;
+      mensagem += `\n📍 25 de Outubro • 17:00`;
+      mensagem += `\n📍 Av. do Contorno, 6480 - Savassi, BH`;
+      
+      // Codificando mensagem para URL
+      const mensagemCodificada = encodeURIComponent(mensagem);
+      
+      // Número do WhatsApp da Infinity School
+      const numeroWhatsApp = '(71) 9204-0134';
+      
+      // Criando link do WhatsApp
+      const linkWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensagemCodificada}`;
+      
+      // Redirecionando para WhatsApp
+      window.open(linkWhatsApp, '_blank');
+      
+      // Feedback visual
+      const submitBtn = document.querySelector('.submit-btn');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = '✅ Redirecionando para WhatsApp...';
+      submitBtn.style.background = '#25D366';
+      
+      setTimeout(() => {
+        submitBtn.textContent = originalText;
+        submitBtn.style.background = 'linear-gradient(45deg, #b30000, #e60000)';
+      }, 3000);
+    });
+
+    // Máscara para telefone
+    document.getElementById('telefone').addEventListener('input', function() {
+      let value = this.value.replace(/\D/g, '');
+      value = value.replace(/^(\d{2})(\d)/g, '($1) $2');
+      value = value.replace(/(\d)(\d{4})$/, '$1-$2');
+      this.value = value;
+    });
+  </script>
+</body>
+</html>
