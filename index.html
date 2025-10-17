@@ -24,6 +24,27 @@
       overflow-x: hidden;
       margin: 0;
       padding: 0;
+      /* Scroll laranja para a página principal */
+      scrollbar-width: thin;
+      scrollbar-color: #ff4500 #0b0b0b;
+    }
+
+    /* Scrollbar personalizada para webkit (Chrome, Safari, Edge) - Página Principal */
+    body::-webkit-scrollbar {
+      width: 12px;
+    }
+
+    body::-webkit-scrollbar-track {
+      background: #0b0b0b;
+    }
+
+    body::-webkit-scrollbar-thumb {
+      background: linear-gradient(45deg, #ff4500, #ff6600);
+      border-radius: 6px;
+    }
+
+    body::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(45deg, #ff6600, #ff8800);
     }
 
     /* Header do Evento */
@@ -447,6 +468,88 @@
       transform: translateY(0);
     }
 
+    /* Container dos botões de envio */
+    .submit-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .whatsapp-options {
+      margin-top: 15px;
+      display: none; /* Inicialmente oculto */
+    }
+
+    .whatsapp-buttons {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .whatsapp-btn {
+      background: linear-gradient(45deg, #25D366, #128C7E);
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 25px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+      min-width: 140px;
+    }
+
+    .whatsapp-btn:hover {
+      background: linear-gradient(45deg, #1fa855, #0a6b5d);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    }
+
+    .whatsapp-btn:active {
+      transform: scale(0.98);
+    }
+
+    .back-btn {
+      background: linear-gradient(45deg, #666, #444);
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 25px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(102, 102, 102, 0.3);
+      min-width: 140px;
+    }
+
+    .back-btn:hover {
+      background: linear-gradient(45deg, #555, #333);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(102, 102, 102, 0.4);
+    }
+
+    .back-btn:active {
+      transform: scale(0.98);
+    }
+
+    /* Estilo para dispositivos móveis */
+    @media (max-width: 768px) {
+      .whatsapp-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .whatsapp-btn, .back-btn {
+        width: 100%;
+        max-width: 200px;
+        margin-bottom: 8px;
+      }
+    }
+
     /* Contador Regressivo */
     .countdown-container {
       background: rgba(20, 20, 20, 0.95);
@@ -659,6 +762,642 @@
         gap: 10px;
       }
     }
+
+    /* Estilos para Marketing da Blusa */
+    .shirt-marketing {
+      text-align: center;
+      margin: 20px 0;
+      padding: 15px;
+      background: linear-gradient(135deg, rgba(255, 69, 0, 0.1), rgba(179, 0, 0, 0.1));
+      border-radius: 15px;
+      border: 2px solid rgba(255, 69, 0, 0.3);
+    }
+
+    .marketing-badge {
+      display: inline-block;
+      background: linear-gradient(45deg, #ff4500, #ff6600);
+      color: white;
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+      animation: pulse 2s infinite;
+      box-shadow: 0 0 15px rgba(255, 69, 0, 0.5);
+    }
+
+    .marketing-text {
+      color: #ddd;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Estilos do Card do Modelo */
+    .model-card {
+      position: relative;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
+    .model-card:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 15px 40px rgba(255, 69, 0, 0.4);
+    }
+
+    .model-card-inner {
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+    }
+
+    .model-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, rgba(255, 69, 0, 0.9), rgba(179, 0, 0, 0.9));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+
+    .model-card:hover .model-overlay {
+      opacity: 1;
+    }
+
+    .overlay-content {
+      text-align: center;
+      color: white;
+      font-weight: bold;
+    }
+
+    .overlay-content p {
+      margin: 0 0 5px 0;
+      font-size: 1.1rem;
+    }
+
+    .overlay-content small {
+      font-size: 0.8rem;
+      opacity: 0.9;
+    }
+
+    .model-subtitle {
+      color: #ff6600;
+      font-size: 0.8rem;
+      margin: 5px 0 0 0;
+      font-style: italic;
+    }
+
+    /* Estilos do Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .modal-content {
+      background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+      margin: 2% auto;
+      padding: 0;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 900px;
+      max-height: 90vh;
+      overflow-y: auto;
+      border: 3px solid #ff4500;
+      box-shadow: 0 0 50px rgba(255, 69, 0, 0.8);
+      animation: slideIn 0.3s ease;
+      /* Scroll laranja personalizado */
+      scrollbar-width: thin;
+      scrollbar-color: #ff4500 #2d2d2d;
+    }
+
+    /* Scrollbar personalizada para webkit (Chrome, Safari, Edge) */
+    .modal-content::-webkit-scrollbar {
+      width: 12px;
+    }
+
+    .modal-content::-webkit-scrollbar-track {
+      background: #2d2d2d;
+      border-radius: 10px;
+    }
+
+    .modal-content::-webkit-scrollbar-thumb {
+      background: linear-gradient(45deg, #ff4500, #ff6600);
+      border-radius: 10px;
+      border: 2px solid #2d2d2d;
+    }
+
+    .modal-content::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(45deg, #ff6600, #ff8800);
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 25px;
+      background: linear-gradient(45deg, #ff4500, #ff6600);
+      border-radius: 17px 17px 0 0;
+      color: white;
+    }
+
+    .modal-header h2 {
+      margin: 0;
+      font-family: 'Creepster', cursive;
+      font-size: 1.8rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .close {
+      color: white;
+      float: right;
+      font-size: 35px;
+      font-weight: bold;
+      cursor: pointer;
+      line-height: 1;
+      transition: all 0.3s ease;
+    }
+
+    .close:hover {
+      color: #ffdddd;
+      transform: scale(1.1);
+    }
+
+    .modal-body {
+      padding: 25px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      color: white;
+    }
+
+    .modal-image-section {
+      position: relative;
+      text-align: center;
+    }
+
+    .modal-image {
+      width: 100%;
+      max-width: 350px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      transition: all 0.3s ease;
+    }
+
+    .modal-image:hover {
+      transform: scale(1.05);
+    }
+
+    .image-badges {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 0.8rem;
+      text-align: center;
+    }
+
+    .badge.limited {
+      background: linear-gradient(45deg, #ff4500, #ff6600);
+      color: white;
+      animation: pulse 2s infinite;
+    }
+
+    .badge.premium {
+      background: linear-gradient(45deg, #ffd700, #ffed4e);
+      color: #333;
+    }
+
+    .modal-details {
+      overflow-y: auto;
+    }
+
+    .product-title h3 {
+      color: #ff4500;
+      font-family: 'Creepster', cursive;
+      font-size: 1.6rem;
+      margin: 0 0 5px 0;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .product-subtitle {
+      color: #ccc;
+      font-size: 1rem;
+      margin: 0 0 20px 0;
+      font-style: italic;
+    }
+
+    .features-list h4 {
+      color: #ff6600;
+      margin: 20px 0 10px 0;
+      font-size: 1.2rem;
+    }
+
+    .features-list ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .features-list li {
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      color: #ddd;
+      font-size: 0.95rem;
+    }
+
+    .pricing-info {
+      margin: 25px 0;
+      padding: 20px;
+      background: rgba(255, 69, 0, 0.1);
+      border-radius: 15px;
+      border: 2px solid rgba(255, 69, 0, 0.3);
+    }
+
+    .pricing-info h4 {
+      color: #ff6600;
+      margin: 0 0 15px 0;
+      font-size: 1.2rem;
+    }
+
+    /* Estilos para a nova seção de exclusividade */
+    .exclusive-info {
+      margin: 25px 0;
+      padding: 20px;
+      background: rgba(255, 69, 0, 0.1);
+      border-radius: 15px;
+      border: 2px solid rgba(255, 69, 0, 0.3);
+    }
+
+    .exclusive-info h4 {
+      color: #ff6600;
+      margin: 0 0 15px 0;
+      font-size: 1.2rem;
+    }
+
+    .exclusive-details {
+      display: flex;
+      gap: 15px;
+      flex-direction: column;
+    }
+
+    .detail-item {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 15px;
+      border-radius: 10px;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .detail-item:hover {
+      border-color: rgba(255, 69, 0, 0.5);
+      background: rgba(255, 69, 0, 0.1);
+    }
+
+    .detail-type {
+      font-weight: bold;
+      color: #ff6600;
+      font-size: 0.9rem;
+      margin-bottom: 5px;
+    }
+
+    .detail-note {
+      font-size: 0.85rem;
+      color: #ccc;
+      font-style: italic;
+    }
+
+    .price-options {
+      display: flex;
+      gap: 15px;
+      flex-direction: column;
+    }
+
+    .price-option {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 15px;
+      border-radius: 10px;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .price-option.highlighted {
+      border-color: #ff4500;
+      background: rgba(255, 69, 0, 0.1);
+      box-shadow: 0 0 15px rgba(255, 69, 0, 0.3);
+    }
+
+    .price-type {
+      font-weight: bold;
+      color: #ff6600;
+      font-size: 0.9rem;
+    }
+
+    .price-value {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #fff;
+      margin: 5px 0;
+    }
+
+    .price-note {
+      font-size: 0.8rem;
+      color: #ccc;
+      font-style: italic;
+    }
+
+    .availability-warning {
+      margin: 20px 0;
+    }
+
+    .warning-box {
+      background: linear-gradient(45deg, rgba(255, 69, 0, 0.2), rgba(255, 0, 0, 0.2));
+      border: 2px solid #ff4500;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      color: #fff;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .btn-primary, .btn-secondary {
+      flex: 1;
+      padding: 15px 20px;
+      border: none;
+      border-radius: 25px;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .btn-primary {
+      background: linear-gradient(45deg, #ff4500, #ff6600);
+      color: white;
+      box-shadow: 0 4px 15px rgba(255, 69, 0, 0.4);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(45deg, #e63900, #ff5500);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 69, 0, 0.6);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.1);
+      color: #ccc;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+    }
+
+    /* Responsividade do Modal */
+    @media (max-width: 768px) {
+      .modal-content {
+        width: 95%;
+        margin: 5% auto;
+        max-height: 95vh;
+      }
+
+      .modal-body {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .modal-header h2 {
+        font-size: 1.4rem;
+      }
+
+      .price-options {
+        gap: 10px;
+      }
+
+      .modal-actions {
+        flex-direction: column;
+      }
+    }
+
+    /* Estilos da Caixa Promocional no Formulário */
+    .shirt-promotion-box {
+      background: linear-gradient(135deg, rgba(255, 69, 0, 0.1), rgba(179, 0, 0, 0.1));
+      border: 3px solid #ff4500;
+      border-radius: 20px;
+      padding: 25px;
+      margin: 20px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .shirt-promotion-box::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(255, 69, 0, 0.05), transparent);
+      animation: shimmer 3s infinite;
+    }
+
+    @keyframes shimmer {
+      0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+      100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+    }
+
+    .promotion-header {
+      text-align: center;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .promotion-header h3 {
+      color: #ff4500;
+      font-family: 'Creepster', cursive;
+      font-size: 1.6rem;
+      margin: 0 0 15px 0;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .promotion-badges {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .promo-badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 15px;
+      font-weight: bold;
+      font-size: 0.8rem;
+      text-align: center;
+      animation: pulse 2s infinite;
+    }
+
+    .promo-badge.hot {
+      background: linear-gradient(45deg, #ff4500, #ff0000);
+      color: white;
+      box-shadow: 0 0 10px rgba(255, 69, 0, 0.5);
+    }
+
+    .promo-badge.discount {
+      background: linear-gradient(45deg, #00ff00, #32cd32);
+      color: #000;
+      box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+    }
+
+    .promotion-details {
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 15px;
+      padding: 15px;
+      margin: 15px 0;
+      border-left: 4px solid #ff4500;
+      position: relative;
+      z-index: 2;
+    }
+
+    .promotion-details p {
+      margin: 8px 0;
+      color: #ddd;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .promotion-details strong {
+      color: #ff6600;
+    }
+
+    .checkbox-group-enhanced {
+      margin-top: 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .enhanced-checkbox-label {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: linear-gradient(45deg, rgba(255, 69, 0, 0.2), rgba(179, 0, 0, 0.2));
+      border: 2px solid #ff4500;
+      border-radius: 15px;
+      padding: 15px 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin: 0;
+    }
+
+    .enhanced-checkbox-label:hover {
+      background: linear-gradient(45deg, rgba(255, 69, 0, 0.3), rgba(179, 0, 0, 0.3));
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255, 69, 0, 0.4);
+    }
+
+    #querCamisa:checked + .enhanced-checkbox-label {
+      background: linear-gradient(45deg, rgba(255, 69, 0, 0.4), rgba(179, 0, 0, 0.4));
+      border-color: #ff6600;
+      box-shadow: 0 0 20px rgba(255, 69, 0, 0.6);
+    }
+
+    .checkbox-text {
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 5px;
+    }
+
+    .checkbox-subtext {
+      color: #ccc;
+      font-size: 0.85rem;
+      font-style: italic;
+      text-align: center;
+    }
+
+    /* Responsividade da Promoção */
+    @media (max-width: 768px) {
+      .shirt-promotion-box {
+        padding: 20px 15px;
+        margin: 15px 0;
+      }
+
+      .promotion-header h3 {
+        font-size: 1.3rem;
+      }
+
+      .promotion-badges {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .promo-badge {
+        font-size: 0.75rem;
+        padding: 5px 10px;
+      }
+
+      .promotion-details {
+        padding: 12px;
+      }
+
+      .promotion-details p {
+        font-size: 0.9rem;
+      }
+
+      .enhanced-checkbox-label {
+        padding: 12px 15px;
+      }
+
+      .checkbox-text {
+        font-size: 1rem;
+      }
+
+      .checkbox-subtext {
+        font-size: 0.8rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -724,17 +1463,38 @@
         <div style="width: 60px; height: 2px; background: linear-gradient(90deg, transparent, #ff4500, transparent);"></div>
       </div>
       <p class="shirt-description">
-        Edição limitada e exclusiva para os participantes do evento.<br>
-        <strong>Design premium com estampa única e numeração especial.</strong><br>
-        <em style="color: #ff6600; font-size: 0.9rem;">Disponível apenas durante o evento - Quantidades limitadas</em>
+        🎯 <strong>Coleção exclusiva e limitada!</strong> Uma oportunidade única para ter sua blusa oficial.<br>
+        ✨ <strong>Design premium exclusivo</strong> com estampa única e numeração especial de colecionador.<br>
+        🎁 <strong>Disponível por reserva</strong> através da inscrição e também durante o evento<br>
+        <em style="color: #ff6600; font-size: 0.95rem; font-weight: bold;">⚡ Reserva antecipada garante sua blusa exclusiva!</em>
       </p>
 
       <!-- Showcase de Modelos -->
-      <div class="shirt-models-title">🎨 Alguns dos Nossos Modelos 🎨</div>
+      <div class="shirt-models-title">🎨 Coleção Exclusiva Hallowinity 2025 🎨</div>
+      <div class="shirt-marketing">
+        <div class="marketing-badge">
+          🎃 <strong>COLEÇÃO OFICIAL!</strong> Design exclusivo do evento!
+        </div>
+        <p class="marketing-text">
+          ⚡ <strong>Reserva antecipada</strong> - Garante sua blusa exclusiva<br>
+          🛒 <strong>Vendas no evento</strong> - Disponível também durante o evento<br>
+          ✨ <em>Design premium com numeração especial de colecionador</em>
+        </p>
+      </div>
+      
       <div class="shirt-models">
-        <div class="model-card">
-          <img src="blusa1.png" alt="Modelo 1 - Camisa Hallowinity" class="model-image">
-          <p class="model-label">🎃 Modelo Clássico</p>
+        <div class="model-card" onclick="openShirtModal()">
+          <div class="model-card-inner">
+            <img src="blusa1.png" alt="Blusa Hallowinity Edition" class="model-image">
+            <div class="model-overlay">
+              <div class="overlay-content">
+                <p>👁️ Ver Detalhes</p>
+                <small>Clique para ampliar</small>
+              </div>
+            </div>
+          </div>
+          <p class="model-label">🎃 <strong>Hallowinity Edition</strong></p>
+          <p class="model-subtitle">Coleção Limitada 2025</p>
         </div>
         <!-- <div class="model-card">
           <img src="blusa2.png" alt="Modelo 2 - Camisa Hallowinity" class="model-image">
@@ -770,10 +1530,27 @@
         </div>
         
         <div class="form-group">
-          <label>👕 Você quer a camisa oficial do evento?</label>
-          <div class="checkbox-group">
-            <input type="checkbox" id="querCamisa" name="querCamisa">
-            <label for="querCamisa" style="margin-bottom: 0;">Sim, quero a camisa exclusiva!</label>
+          <div class="shirt-promotion-box">
+            <div class="promotion-header">
+              <h3>🎃 Blusa Oficial Hallowinity Edition 2025</h3>
+              <div class="promotion-badges">
+                <span class="promo-badge hot">� ÚLTIMAS UNIDADES</span>
+                <span class="promo-badge discount">✨ RESERVA ANTECIPADA</span>
+              </div>
+            </div>
+            <div class="promotion-details">
+              <p><strong>✨ Garante sua blusa exclusiva da coleção oficial!</strong></p>
+              <p>🎁 <strong>Reserva através da inscrição</strong> - Garante sua blusa<br>
+              🛒 <strong>Também disponível no evento</strong> para compra no local<br>
+              🎯 <strong>Design exclusivo</strong> com numeração especial de colecionador</p>
+            </div>
+            <div class="checkbox-group-enhanced">
+              <input type="checkbox" id="querCamisa" name="querCamisa">
+              <label for="querCamisa" class="enhanced-checkbox-label">
+                <span class="checkbox-text">🎃 <strong>SIM!</strong> Quero garantir minha Hallowinity Edition!</span>
+                <span class="checkbox-subtext">Clique aqui para reservar sua blusa exclusiva</span>
+              </label>
+            </div>
           </div>
         </div>
 
@@ -818,9 +1595,27 @@
           </div>
         </div>
         
-        <button type="submit" class="submit-btn">
-          🎃 Garantir Minha Vaga no Hallowinity 2025
-        </button>
+        <div class="submit-container">
+          <button type="submit" class="submit-btn">
+            🎃 Garantir Minha Vaga no Hallowinity 2025
+          </button>
+          
+          <div class="whatsapp-options">
+            <p style="color: #ccc; font-size: 0.9rem; margin: 10px 0 5px;">Escolha como enviar:</p>
+            <div class="whatsapp-buttons">
+              <button type="button" class="whatsapp-btn" data-type="mobile">
+                📱 WhatsApp Mobile
+              </button>
+              <button type="button" class="whatsapp-btn" data-type="web">
+                💻 WhatsApp Web
+              </button>
+              <button type="button" class="back-btn">
+                ⬅️ Voltar
+              </button>
+            </div>
+            <p id="device-suggestion" style="color: #25D366; font-size: 0.8rem; margin-top: 8px; font-style: italic;"></p>
+          </div>
+        </div>
       </form>
     </div>
   </div>
@@ -897,46 +1692,216 @@
         formData.quantidadeCamisas = document.getElementById('quantidadeCamisas').value;
       }
       
-      // Construindo mensagem para WhatsApp
-      let mensagem = `🎃 *CONFIRMAÇÃO HALLOWINITY 2025* 🎃\n\n`;
-      mensagem += `👤 *Nome:* ${formData.nome}\n`;
-      mensagem += `📱 *WhatsApp:* ${formData.telefone}\n`;
-      mensagem += `👥 *Acompanhantes:* ${formData.acompanhantes}\n`;
+      // Função para enviar para WhatsApp
+      function enviarParaWhatsApp(tipo) {
+        // Construindo mensagem para WhatsApp
+        let mensagem = `🎃 *CONFIRMAÇÃO HALLOWINITY 2025* 🎃\n\n`;
+        mensagem += `👤 *Nome:* ${formData.nome}\n`;
+        mensagem += `📱 *WhatsApp:* ${formData.telefone}\n`;
+        mensagem += `👥 *Acompanhantes:* ${formData.acompanhantes}\n`;
+        
+        if (formData.querCamisa) {
+          mensagem += `👕 *Camisa:* Sim\n`;
+          mensagem += `📏 *Tamanho:* ${formData.tamanho}\n`;
+          mensagem += `🔢 *Quantidade:* ${formData.quantidadeCamisas}\n`;
+          mensagem += `\n💰 *VENDAS DE BLUSA* - Interesse em adquirir`;
+        } else {
+          mensagem += `👕 *Camisa:* Não\n`;
+          mensagem += `\n📝 *INSCRIÇÃO DO EVENTO*`;
+        }
+        
+        mensagem += `\n🎃 Confirmo minha presença no Hallowinity 2025!`;
+        mensagem += `\n📍 25 de Outubro • 17:00`;
+        mensagem += `\n📍 Av. do Contorno, 6480 - Savassi, BH`;
+        
+        // Codificando mensagem para URL
+        const mensagemCodificada = encodeURIComponent(mensagem);
+        
+        // ⚠️ CONFIGURAÇÃO DOS NÚMEROS DE WHATSAPP
+        let numeroWhatsApp;
+        
+        if (formData.querCamisa) {
+          // Números para pessoas que querem a blusa
+          const numerosBlusas = [
+            '5538984096878', // (38) 8409-6878
+            '5517168043330'  // (1) 7168-4330
+          ];
+          // Alternar entre os dois números para distribuir as mensagens
+          const indiceNumero = Math.floor(Math.random() * numerosBlusas.length);
+          numeroWhatsApp = numerosBlusas[indiceNumero];
+          console.log(`📱 Pessoa quer blusa - Usando número ${indiceNumero + 1}: ${numeroWhatsApp}`);
+        } else {
+          // Número padrão para inscrições sem blusa
+          numeroWhatsApp = '5571999887766'; // ⚠️ NÚMERO DE EXEMPLO - ALTERAR!
+          console.log(`📱 Inscrição sem blusa - Usando número padrão: ${numeroWhatsApp}`);
+        }
+        
+        // Validar formato do número brasileiro
+        function validarNumero(numero) {
+          // Número brasileiro deve ter 13 dígitos: 55 + DDD + 9 + 8 dígitos
+          const regex = /^55\d{2}9\d{8}$/;
+          return regex.test(numero);
+        }
+        
+        if (!validarNumero(numeroWhatsApp)) {
+          console.error('⚠️ ERRO: Número de telefone inválido:', numeroWhatsApp);
+          console.error('Formato esperado: 55[DDD]9[8 dígitos] (Ex: 5571999887766)');
+          alert('ERRO TÉCNICO: Número de WhatsApp não configurado corretamente.\n\nContacte o desenvolvedor para configurar o número correto.');
+          return;
+        }
+        
+        console.log('✅ Número validado:', numeroWhatsApp);
+        
+        // Função para criar URLs válidas e testadas
+        function criarURLsWhatsApp(numero, mensagem) {
+          // URLs testadas e validadas
+          const urls = {
+            web: [
+              // URL principal do WhatsApp Web (mais confiável)
+              `https://web.whatsapp.com/send?phone=${numero}&text=${encodeURIComponent(mensagem)}`,
+              // Fallback universal que funciona em ambos
+              `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`
+            ],
+            mobile: [
+              // URL do wa.me (funciona em mobile e desktop)
+              `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`
+            ]
+          };
+          
+          // Validar se as URLs estão bem formadas
+          urls.web.forEach((url, index) => {
+            try {
+              new URL(url);
+              console.log(`✅ URL Web ${index + 1} válida:`, url.substring(0, 50) + '...');
+            } catch (e) {
+              console.error(`❌ URL Web ${index + 1} inválida:`, url);
+            }
+          });
+          
+          return urls;
+        }
+        
+        const urlsWhatsApp = criarURLsWhatsApp(numeroWhatsApp, mensagem);
+        const urlsParaTentar = urlsWhatsApp[tipo] || urlsWhatsApp.mobile;
+        
+        // Debug: mostrar URLs que serão tentadas
+        console.log(`📱 Tentando abrir ${tipo.toUpperCase()}:`, urlsParaTentar.length, 'URLs disponíveis');
+        
+        // Redirecionamento inteligente com fallback robusto
+        function tentarAbrir(urls, indice = 0) {
+          if (indice >= urls.length) {
+            console.error('❌ Todas as tentativas falharam');
+            alert('Não foi possível abrir o WhatsApp automaticamente.\n\nPor favor:\n1. Verifique se tem WhatsApp instalado\n2. Tente copiar o número: ' + numeroWhatsApp.replace(/^55/, '+55 ').replace(/(\d{2})(\d{9})/, '($1) $2').replace(/(\d{5})(\d{4})$/, '$1-$2'));
+            return;
+          }
+          
+          const urlAtual = urls[indice];
+          console.log(`🔄 Tentativa ${indice + 1}/${urls.length}:`, urlAtual.substring(0, 60) + '...');
+          
+          try {
+            const janela = window.open(urlAtual, '_blank');
+            
+            if (!janela) {
+              console.log('🚫 Popup bloqueado, tentando próxima...');
+              setTimeout(() => tentarAbrir(urls, indice + 1), 500);
+              return;
+            }
+            
+            // Para WhatsApp Web, aguardar carregamento
+            if (tipo === 'web' && indice === 0) {
+              setTimeout(() => {
+                try {
+                  if (janela.closed) {
+                    console.log('📱 WhatsApp Web fechou, usuário pode ter trocado para app');
+                  } else if (janela.location.href === 'about:blank') {
+                    console.log('⏳ WhatsApp Web não carregou, tentando fallback...');
+                    janela.close();
+                    tentarAbrir(urls, indice + 1);
+                  } else {
+                    console.log('✅ WhatsApp Web carregou com sucesso');
+                  }
+                } catch (e) {
+                  // Erro de CORS indica que o WhatsApp carregou (comportamento esperado)
+                  console.log('✅ WhatsApp redirecionou com sucesso');
+                }
+              }, 2000);
+            } else {
+              console.log('✅ WhatsApp Mobile aberto com sucesso');
+            }
+            
+          } catch (error) {
+            console.error('❌ Erro ao abrir URL:', error);
+            setTimeout(() => tentarAbrir(urls, indice + 1), 500);
+          }
+        }
+        
+        tentarAbrir(urlsParaTentar);
+        
+        // Feedback visual
+        const submitBtn = document.querySelector('.submit-btn');
+        const originalText = submitBtn.textContent;
+        const tipoTexto = tipo === 'web' ? 'WhatsApp Web' : 'WhatsApp Mobile';
+        
+        // Mostrar qual número está sendo usado
+        let feedbackTexto;
+        if (formData.querCamisa) {
+          const numeroFormatado = numeroWhatsApp.replace(/^55/, '+55 ').replace(/(\d{2})(\d{9})/, '($1) $2').replace(/(\d{5})(\d{4})$/, '$1-$2');
+          feedbackTexto = `✅ Enviando para vendas: ${numeroFormatado}`;
+        } else {
+          feedbackTexto = `✅ Redirecionando para ${tipoTexto}...`;
+        }
+        
+        submitBtn.textContent = feedbackTexto;
+        submitBtn.style.background = '#25D366';
+        
+        setTimeout(() => {
+          submitBtn.textContent = originalText;
+          submitBtn.style.background = 'linear-gradient(45deg, #b30000, #e60000)';
+        }, 4000); // Aumentei para 4 segundos para dar tempo de ler o número
+      }
+
+      // Ocultar botão principal e mostrar opções do WhatsApp
+      const submitBtn = document.querySelector('.submit-btn');
+      const whatsappOptions = document.querySelector('.whatsapp-options');
+      const deviceSuggestion = document.getElementById('device-suggestion');
       
-      if (formData.querCamisa) {
-        mensagem += `👕 *Camisa:* Sim\n`;
-        mensagem += `📏 *Tamanho:* ${formData.tamanho}\n`;
-        mensagem += `🔢 *Quantidade:* ${formData.quantidadeCamisas}\n`;
+      // Detectar tipo de dispositivo
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      
+      if (isMobile) {
+        deviceSuggestion.textContent = '💡 Recomendado: WhatsApp Mobile para melhor experiência';
+        // Destacar botão mobile
+        document.querySelector('[data-type="mobile"]').style.background = 'linear-gradient(45deg, #1fa855, #0a6b5d)';
+        document.querySelector('[data-type="mobile"]').style.transform = 'scale(1.05)';
       } else {
-        mensagem += `👕 *Camisa:* Não\n`;
+        deviceSuggestion.textContent = '💡 Recomendado: WhatsApp Web para computadores';
+        // Destacar botão web
+        document.querySelector('[data-type="web"]').style.background = 'linear-gradient(45deg, #1fa855, #0a6b5d)';
+        document.querySelector('[data-type="web"]').style.transform = 'scale(1.05)';
       }
       
-      mensagem += `\n🎃 Confirmo minha presença no Hallowinity 2025!`;
-      mensagem += `\n📍 25 de Outubro • 17:00`;
-      mensagem += `\n📍 Av. do Contorno, 6480 - Savassi, BH`;
+      submitBtn.style.display = 'none';
+      whatsappOptions.style.display = 'block';
       
-      // Codificando mensagem para URL
-      const mensagemCodificada = encodeURIComponent(mensagem);
-      
-      // Número do WhatsApp da Infinity School
-      const numeroWhatsApp = '(71) 9204-0134';
-      
-      // Criando link do WhatsApp
-      const linkWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensagemCodificada}`;
-      
-      // Redirecionando para WhatsApp
-      window.open(linkWhatsApp, '_blank');
-      
-      // Feedback visual
-      const submitBtn = document.querySelector('.submit-btn');
-      const originalText = submitBtn.textContent;
-      submitBtn.textContent = '✅ Redirecionando para WhatsApp...';
-      submitBtn.style.background = '#25D366';
-      
-      setTimeout(() => {
-        submitBtn.textContent = originalText;
-        submitBtn.style.background = 'linear-gradient(45deg, #b30000, #e60000)';
-      }, 3000);
+      // Adicionar eventos aos botões do WhatsApp
+      document.querySelectorAll('.whatsapp-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const tipo = this.getAttribute('data-type');
+          enviarParaWhatsApp(tipo);
+          
+          // Restaurar estado original após 3 segundos
+          setTimeout(() => {
+            submitBtn.style.display = 'block';
+            whatsappOptions.style.display = 'none';
+          }, 3000);
+        });
+      });
+
+      // Adicionar evento ao botão voltar
+      document.querySelector('.back-btn').addEventListener('click', function() {
+        submitBtn.style.display = 'block';
+        whatsappOptions.style.display = 'none';
+      });
     });
 
     // Máscara para telefone
@@ -946,6 +1911,90 @@
       value = value.replace(/(\d)(\d{4})$/, '$1-$2');
       this.value = value;
     });
+
+    // Funções do Modal da Blusa
+    function openShirtModal() {
+      document.getElementById('shirtModal').style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeShirtModal() {
+      document.getElementById('shirtModal').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    // Fechar modal clicando fora
+    window.onclick = function(event) {
+      const modal = document.getElementById('shirtModal');
+      if (event.target === modal) {
+        closeShirtModal();
+      }
+    }
   </script>
+
+  <!-- Modal da Blusa -->
+  <div id="shirtModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>🎃 Hallowinity Edition - Blusa Oficial 2025</h2>
+        <span class="close" onclick="closeShirtModal()">&times;</span>
+      </div>
+      
+      <div class="modal-body">
+        <div class="modal-image-section">
+          <img src="blusa1.png" alt="Blusa Hallowinity Edition" class="modal-image">
+          <div class="image-badges">
+            <span class="badge limited">🔥 EDIÇÃO LIMITADA</span>
+            <span class="badge premium">✨ DESIGN PREMIUM</span>
+          </div>
+        </div>
+        
+        <div class="modal-details">
+          <div class="product-title">
+            <h3>🎃 Hallowinity Edition 2025</h3>
+            <p class="product-subtitle">Coleção Oficial do Evento</p>
+          </div>
+          
+          <div class="features-list">
+            <h4>🌟 Características Exclusivas:</h4>
+            <ul>
+              <li>🎨 <strong>Design único</strong> criado especialmente para o evento</li>
+              <li>🔢 <strong>Numeração especial</strong> de colecionador</li>
+              <li>👕 <strong>Tecido premium</strong> 100% algodão</li>
+              <li>🎃 <strong>Estampa exclusiva</strong> Hallowinity 2025</li>
+              <li>📏 <strong>Corte moderno</strong> disponível em todos os tamanhos</li>
+              <li>🏆 <strong>Certificado de autenticidade</strong> incluso</li>
+            </ul>
+          </div>
+          
+          <div class="exclusive-info">
+            <div class="exclusive-section">
+              <h4>🎁 Disponibilidade:</h4>
+              <div class="exclusive-details">
+                <div class="detail-item">
+                  <div class="detail-type">🎯 Reserva Antecipada</div>
+                  <div class="detail-note">Garanta sua blusa através da inscrição!</div>
+                </div>
+                <div class="detail-item">
+                  <div class="detail-type">🛒 Vendas no Evento</div>
+                  <div class="detail-note">Disponível também durante o evento</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="modal-actions">
+            <button class="btn-primary" onclick="document.getElementById('querCamisa').checked = true; document.getElementById('querCamisa').dispatchEvent(new Event('change')); closeShirtModal();">
+              🎃 Quero Minha Blusa!
+            </button>
+            <button class="btn-secondary" onclick="closeShirtModal()">
+              Ver Mais Tarde
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
