@@ -82,12 +82,10 @@
       <div class="shirt-models-title">🎨 Coleção Exclusiva Hallowinity 2025 🎨</div>
       <div class="shirt-marketing">
         <div class="marketing-badge">
-          🎃 <strong>COLEÇÃO OFICIAL!</strong> Design exclusivo do evento!
+          � <strong>COLEÇÃO OFICIAL</strong>
         </div>
         <p class="marketing-text">
-          ⚡ <strong>Reserva antecipada</strong> - Garante sua blusa exclusiva<br>
-          🛒 <strong>Vendas no evento</strong> - Disponível também durante o evento<br>
-          ✨ <em>Design premium com numeração especial de colecionador</em>
+          Garanta a sua edição limitada hoje — design premium, numeração exclusiva e entrega prioritária para reservas. Disponível também durante o evento.
         </p>
       </div>
       
@@ -112,6 +110,7 @@
       </div>
     </div>
 
+    
     <!-- Conteúdo das Abas -->
     <div class="tab-content">
       <!-- Aba de Inscrição no Evento -->
@@ -138,8 +137,7 @@
             <option value="1">1 acompanhante</option>
             <option value="2">2 acompanhantes</option>
             <option value="3">3 acompanhantes</option>
-            <option value="4">4 acompanhantes</option>
-            <option value="5">5+ acompanhantes</option>
+        
           </select>
         </div>
         
@@ -155,25 +153,24 @@
             <div class="promotion-details">
               <p><strong>✨ Garante sua blusa exclusiva da coleção oficial!</strong></p>
               <p>🎁 <strong>Reserva através da inscrição</strong> - Garante sua blusa<br>
-              🛒 <strong>Também disponível no evento</strong> para compra no local<br>
-              🎯 <strong>Design exclusivo</strong> com numeração especial de colecionador</p>
-            </div>
-            <div class="checkbox-group-enhanced">
-              <input type="checkbox" id="querCamisa" name="querCamisa">
-              <label for="querCamisa" class="enhanced-checkbox-label">
-                <span class="checkbox-text">🎃 <strong>SIM!</strong> Quero garantir minha Hallowinity Edition!</span>
-                <span class="checkbox-subtext">Clique aqui para reservar sua blusa exclusiva</span>
-              </label>
+                🛒 <strong>Também disponível no evento</strong> para compra no local<br>
+                🎯 <strong>Design exclusivo</strong> com numeração especial de colecionador</p>
+              </div>
+              <div class="checkbox-group-enhanced">
+                <input type="checkbox" id="querCamisa" name="querCamisa">
+                <label for="querCamisa" class="enhanced-checkbox-label">
+                  <span class="checkbox-text">🎃 <strong>SIM!</strong> Quero garantir minha Hallowinity Edition!</span>
+                  <span class="checkbox-subtext">Clique aqui para reservar sua blusa exclusiva</span>
+                </label>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div class="form-group hidden" id="camisaDetails">
-          <div class="form-row">
-            <div class="form-group">
-              <label>📏 Qual tamanho?</label>
-              <div class="radio-group">
-                <div class="radio-option">
+          <div class="form-group hidden" id="camisaDetails">
+            <div class="form-row">
+              <div class="form-group">
+                <label>📏 Qual tamanho?</label>
+                <div class="radio-group">
+                  <div class="radio-option">
                   <input type="radio" id="tamanhoP" name="tamanho" value="P">
                   <label for="tamanhoP" class="radio-label">P</label>
                 </div>
@@ -208,7 +205,169 @@
             </div>
           </div>
         </div>
+
+        <!-- Seção de Informações do Evento -->
+        <div class="form-group">
+          <div class="event-info-box">
+            <h3>🎉 Informações do Evento 🎉</h3>
+            
+            <!-- Open Bar Banner Completo -->
+            <div class="openbar-banner-full">
+              <img src="openbar.png" alt="Open Bar Hallowinity" class="openbar-banner-image">
+              <div class="openbar-banner-overlay">
+                <div class="openbar-banner-text">
+                  <p class="openbar-default">Bebidas liberadas durante todo o evento!</p>
+                  <p class="openbar-adult hidden">🍻 Bebidas alcoólicas e não alcoólicas liberadas! Aproveite sem moderação!</p>
+                  <p class="openbar-minor hidden">🧃 Sucos, refrigerantes e bebidas não alcoólicas liberadas!</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Outros Destaques -->
+            <div class="event-highlights">
+              <div class="highlight-item">
+                <span class="highlight-icon">🎤</span>
+                <div class="highlight-content">
+                  <strong>PALESTRAS TÉCNICAS</strong>
+                  <p>Conteúdos incríveis com profissionais da área de tecnologia</p>
+                </div>
+              </div>
+
+              <div class="highlight-item">
+                <span class="highlight-icon">🎭</span>
+                <div class="highlight-content">
+                  <strong>EXPERIÊNCIAS ÚNICAS</strong>
+                  <p>Música, arte, networking e muito mais!</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Seção de Elegibilidade -->
+            <div class="eligibility-section">
+              <h4>📋 Informações Importantes</h4>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="tipo-participante">🏫 Você é:</label>
+                  <select id="tipo-participante" name="tipo-participante" required>
+                    <option value="">Selecione uma opção</option>
+                    <option value="aluno">👨‍🎓 Aluno da Infinity School</option>
+                    <option value="visitante">👥 Visitante</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="faixa-etaria">🎂 Faixa Etária:</label>
+                  <select id="faixa-etaria" name="faixa-etaria" required>
+                    <option value="">Selecione sua faixa etária</option>
+                    <option value="menor">🧒 Menor de idade (até 17 anos)</option>
+                    <option value="maior">🧑‍💼 Maior de idade (18+ anos)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         
+        
+        <!-- Seção de Tatuagens -->
+        <div class="tattoo-promo">
+          <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 20px;">
+            <div style="width: 60px; height: 2px; background: linear-gradient(90deg, transparent, #ff4500, transparent);"></div>
+            <h2 class="tattoo-title">🎨 Arte Sombria em Sua Pele 🦇</h2>
+            <div style="width: 60px; height: 2px; background: linear-gradient(90deg, transparent, #ff4500, transparent);"></div>
+          </div>
+    
+          <!-- Seção da Tatuadora -->
+          <div class="tattoo-artist">
+            <div class="artist-photo">
+                <!-- id e data-hover-src adicionados; coloque a imagem de hover em angella_hover.png -->
+                <img id="angellaImage" src="angella.png" data-hover-src="transition.png" alt="Ângella Maris - Tatuadora" class="artist-image">
+              </div>
+            <div class="artist-info">
+              <h3>🖤 Ângella Maris 🖤</h3>
+              <p class="artist-description">
+                "Transformando pesadelos em arte permanente"<br>
+                <span class="artist-specialty">Especialista em Blackwork e Arte Sombria</span><br>
+                <span style="color: #fff; font-size: 1em; margin-top: 15px; display: block;">🎨 Conheça o trabalho da artista no:</span>
+                <a href="https://instagram.com/tattoo.mariss" target="_blank" class="artist-instagram" style="color: #ff6600; font-weight: bold; font-size: 1.2em; margin-top: 5px; display: inline-flex; align-items: center; text-decoration: none; transition: color 0.3s ease;">
+                  <img src="instagram.png" alt="Instagram" style="width: 1.2em; height: 1.2em; margin-right: 0.5em;"> @tattoo.mariss
+                </a>
+              </p>
+            </div>
+          </div>
+    
+          <p class="tattoo-description">
+            🌙 <strong>Deixe sua marca nesta noite sombria!</strong><br>
+            �️ <strong>Designs arrepiantes</strong> que contarão sua história eternamente<br>
+            ⚰️ <strong>Promoção para arrepiar!</strong><br>
+          </p>
+          
+          <div class="promo-highlight" aria-hidden="false">
+            <span class="offer-title" style="font-family: 'Creepster', cursive;">
+              🎨 3 TATUAGENS MINIMALISTA 🎨
+            </span>
+            <span class="price" style="font-family: 'Creepster', cursive;">
+              💰 POR R$ 100,00 💰
+            </span>
+          </div>
+          
+          <p class="tattoo-description">
+            <em style="color: #ff6600; font-size: 0.95rem; font-weight: bold;">💉 Porque algumas cicatrizes são destinadas a permanecer...</em>
+          </p>
+    
+          <div class="tattoo-marketing">
+            <div class="marketing-badge spooky-gradient">
+              🎃 <strong>PACTO HALLOWINITY!</strong> R$ 100,00
+            </div>
+            <p class="marketing-text">
+              🌑 <em>Cada tatuagem conta uma história de terror...</em>
+            </p>
+            
+            <div class="spooky-features">
+              <div class="feature">
+                <span class="feature-icon">🎨</span>
+                <span class="feature-text">Designs Exclusivos de Horror</span>
+              </div>
+              <div class="feature">
+                <span class="feature-icon">⚡</span>
+                <span class="feature-text">Flash Day Macabro</span>
+              </div>
+              <div class="feature">
+                <span class="feature-icon">🔮</span>
+                <span class="feature-text">Arte Personalizada</span>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Galeria de Designs Disponíveis -->
+          <div class="tattoo-designs">
+            <h3 class="designs-title">🎨 Designs Disponíveis 🎨</h3>
+
+            <!-- Carousel centralizado e simplificado -->
+            <div class="designs-carousel-center">
+              <div class="design-item" onclick="openTattooModal(0)">
+                <img src="ghost.png" alt="Fantasma Hallowinity">
+              </div>
+              <div class="design-item" onclick="openTattooModal(1)">
+                <img src="skull.png" alt="Caveira Hallowinity">
+              </div>
+              <div class="design-item" onclick="openTattooModal(2)">
+                <img src="bat.png" alt="Morcego Hallowinity">
+              </div>
+              <div class="design-item" onclick="openTattooModal(3)">
+                <img src="pumpkin.png" alt="Abóbora Hallowinity">
+              </div>
+              <div class="design-item" onclick="openTattooModal(4)">
+                <img src="spider.png" alt="Aranha Hallowinity">
+              </div>
+              <div class="design-item" onclick="openTattooModal(5)">
+                <img src="heart.png" alt="Coração Diabólico Hallowinity">
+              </div>
+            </div>
+
+            <p class="designs-instruction">Clique em uma miniatura para ver o design completo e encomendar.</p>
+          </div>
+        </div>
         <!-- Seção do Concurso de Fantasia -->
         <div class="form-group">
           <div class="contest-participation-box">
@@ -222,7 +381,7 @@
 
             <!-- Galeria das Fantasias do Ano Passado -->
             <div class="previous-winners-section">
-              <h4 style="text-align: center; color: #FFD700; margin-bottom: 15px; font-family: 'Creepster', cursive;">
+              <h4 style="text-align: center; color: #ff6600; margin-bottom: 15px; font-family: 'Creepster', cursive;">
                 👑 Vencedores 2024 - Inspire-se! 👑
               </h4>
               <div class="winners-gallery">
